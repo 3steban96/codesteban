@@ -1,5 +1,6 @@
 import './assets/css/style.css'
-
+import './assets/js/script.js'
+import './assets/js/script2.js'
 document.querySelector('#app').innerHTML = `
 <section id="windowP" class="contentWindows sectionCards">
         
