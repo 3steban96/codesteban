@@ -1,4 +1,8 @@
 document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("windowP").style.display="none";
+        document.getElementById("sectionBtnOn").style.display = "flex";
+    });
+document.addEventListener("DOMContentLoaded", function() {
     var button = document.getElementById('fullscreen-btn');
     var body = document.body;
     var contentWindows = document.querySelector('.contentWindows');
