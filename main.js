@@ -1,6 +1,11 @@
 import './assets/css/style.css'
 import './assets/js/script.js'
 import './assets/js/script2.js'
+import './assets/img/cv_13423379.png'
+import './assets/img/icon_On-Off.png'
+import './assets/img/iconConvertFile.png'
+import './assets/img/iconDM-Player.png'
+import './assets/img/stackTech.png'
 document.querySelector('#app').innerHTML = `
 <section id="windowP" class="contentWindows sectionCards">
         
