@@ -78,14 +78,19 @@ document.querySelector('#app').innerHTML = `
                                 <div class="container-fluid">
                                     <div id="navbarNav " class="navStyle">
                                         <ul class="navbar-nav ">
-                                            <li class="nav-item" >
-                                                <button class="nav-link active btnProjects" onclick="wDownloadMusic()">
-                                                    <img src="./assets/img/iconDM-Player.png" style="width: 30px;"/> DownloadMusic
+                                            <li class="nav-item">
+                                                <button class="nav-link active btnProjects" onclick="wBizLinguapp()">
+                                                    <span style="font-size: 24px; margin-right: 5px;">📱</span> BizLinguapp
                                                 </button>
                                             </li>
                                             <li class="nav-item">
-                                                <button class="nav-link active btnProjects" onclick="wConvertFile()">
-                                                    <img src="./assets/img/iconConvertFile.png" style="width: 30px;"/> ConvertiFile
+                                                <button class="nav-link active btnProjects" onclick="wHseqSystem()">
+                                                    <span style="font-size: 24px; margin-right: 5px;">🏢</span> HSEQ System
+                                                </button>
+                                            </li>
+                                            <li class="nav-item">
+                                                <button class="nav-link active btnProjects" onclick="wParkingSystem()">
+                                                    <span style="font-size: 24px; margin-right: 5px;">🚗</span> Parking System
                                                 </button>
                                             </li>
                                         </ul>
@@ -93,162 +98,64 @@ document.querySelector('#app').innerHTML = `
                                 </div>
                             </nav>
                         </div>                                
-                        <div class="col-sm-8 col-md-10 col-lg-10 col-xl-10" style="display: none;background-color: #000000;border-radius:0 0 10px 0;" id="downloadMusic">
-                            <div class="pt-2">
+                        <div class="col-sm-8 col-md-10 col-lg-10 col-xl-10" style="display: none; background-color: #f8f9fa; border-radius: 0 0 10px 0;" id="bizLinguapp">
+                            <div style="padding-top: 20px;">
                                 <div class="row" style="text-align: center;font-weight: bold;">
-                                    <div class="col d-flex justify-content-center">
-                                        <h1 class="title">DownloadMusic</h1>
-                                        <div class="loader"> 
-                                            <span class="bar"></span>
-                                            <span class="bar"></span>
-                                            <span class="bar"></span>
-                                        </div>
-                                    </div>
+                                    <h1 style="color: #212529;">BizLinguapp</h1>
                                 </div>
                                 <div class="row">
-                                    <div class="col d-flex justify-content-center">
-                                        <input class="inputDownloadMusic" placeholder="Url video de Youtube"/>
-                                    </div>
-                                </div>
-                                <div class="row pt-3">
-                                    <div class="col d-flex justify-content-end">
-                                        <img class="imgMiniature"/>
-                                    </div>                                            
-                                    <div class="col" style="align-items:center; display: flex">
-                                        <button class="btnDM" onclick="downloadMusicMP3()">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" className="bi bi-filetype-mp3" viewBox="0 0 16 16">
-                                              <path fill-rule="evenodd" d="M14 4.5V14a2 2 0 0 1-2 2v-1a1 1 0 0 0 1-1V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v9H2V2a2 2 0 0 1 2-2h5.5zm-4.911 9.67h-.443v-.609h.422a.7.7 0 0 0 .322-.073.56.56 0 0 0 .22-.2.5.5 0 0 0 .076-.284.49.49 0 0 0-.176-.392.65.65 0 0 0-.442-.15.7.7 0 0 0-.252.041.6.6 0 0 0-.193.112.5.5 0 0 0-.179.349H7.71q.009-.235.102-.437.094-.202.27-.352.176-.152.428-.237.255-.085.583-.088.418-.003.723.132.304.135.472.372a.9.9 0 0 1 .173.539.83.83 0 0 1-.12.478.96.96 0 0 1-.619.439v.041a1 1 0 0 1 .718.434.9.9 0 0 1 .144.521q.003.285-.117.507a1.1 1.1 0 0 1-.329.378q-.21.152-.486.234-.273.08-.583.08-.451 0-.77-.153a1.2 1.2 0 0 1-.487-.41 1.1 1.1 0 0 1-.178-.563h.726a.46.46 0 0 0 .106.258.7.7 0 0 0 .249.179 1 1 0 0 0 .357.067.9.9 0 0 0 .384-.076.6.6 0 0 0 .252-.217.56.56 0 0 0 .088-.319.56.56 0 0 0-.334-.522.8.8 0 0 0-.372-.079ZM.706 15.925v-2.66h.038l.952 2.16h.516l.946-2.16h.038v2.66h.715v-3.999h-.8l-1.14 2.596h-.026l-1.14-2.596H0v4zm5.458-3.999h-1.6v4h.792v-1.342h.803q.43 0 .732-.173.304-.177.463-.475a1.4 1.4 0 0 0 .161-.677q0-.374-.158-.677a1.2 1.2 0 0 0-.46-.477 1.4 1.4 0 0 0-.733-.179m.545 1.333a.8.8 0 0 1-.085.381.57.57 0 0 1-.237.24.8.8 0 0 1-.375.082h-.66v-1.406h.66q.328 0 .513.182.184.181.184.521"/>
-                                            </svg>
-                                            <h4 >Descargar audio</h4>
-                                          </button>
-                                        <button class='btnDV' onclick="downloadVideo()">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" className="bi bi-film" viewBox="0 0 16 16">
-                                              <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2h2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
-                                            </svg>
-                                            <h4 >Descargar video</h4>
+                                    <div class="col-12" style="text-align: center; padding: 20px;">
+                                        <p style="color: #212529; font-size: 1.2rem;">Una aplicación de enseñanza y practica de ingles laboral</p>
+                                        <div style="margin-top: 20px;">
+                                            <span class="badge rounded-pill text-bg-primary">English</span>
+                                            <span class="badge rounded-pill text-bg-light">Practice</span>
+                                            <span class="badge rounded-pill text-bg-info">Work</span>
+                                        </div>
+                                        <button onclick="openBizLinguapp()" style="margin-top: 30px; border: none; background-color: #0078d4; padding: 10px 20px; border-radius: 10px; color: white; font-weight: bold; cursor: pointer;">
+                                            Ver en Google Play
                                         </button>
-                                    </div>                                            
-                                </div>
-                                <div class="row pt-2 stProyects">
-                                    <div style="text-align: center;color: white;">
-                                        <h2 >Tecnologías usadas</h2>
-                                    </div>                                      
-                                </div>
-                                <div class="row stProyects">
-                                    <div class="col d-flex justify-content-end ">
-                                        <div class="svg-container">
-                                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 48 48">
-                                                <path fill="#80deea"
-                                                    d="M24,34C11.1,34,1,29.6,1,24c0-5.6,10.1-10,23-10c12.9,0,23,4.4,23,10C47,29.6,36.9,34,24,34z M24,16	c-12.6,0-21,4.1-21,8c0,3.9,8.4,8,21,8s21-4.1,21-8C45,20.1,36.6,16,24,16z">
-                                                </path>
-                                                <path fill="#80deea"
-                                                    d="M15.1,44.6c-1,0-1.8-0.2-2.6-0.7C7.6,41.1,8.9,30.2,15.3,19l0,0c3-5.2,6.7-9.6,10.3-12.4c3.9-3,7.4-3.9,9.8-2.5	c2.5,1.4,3.4,4.9,2.8,9.8c-0.6,4.6-2.6,10-5.6,15.2c-3,5.2-6.7,9.6-10.3,12.4C19.7,43.5,17.2,44.6,15.1,44.6z M32.9,5.4	c-1.6,0-3.7,0.9-6,2.7c-3.4,2.7-6.9,6.9-9.8,11.9l0,0c-6.3,10.9-6.9,20.3-3.6,22.2c1.7,1,4.5,0.1,7.6-2.3c3.4-2.7,6.9-6.9,9.8-11.9	c2.9-5,4.8-10.1,5.4-14.4c0.5-4-0.1-6.8-1.8-7.8C34,5.6,33.5,5.4,32.9,5.4z">
-                                                </path>
-                                                <path fill="#80deea"
-                                                    d="M33,44.6c-5,0-12.2-6.1-17.6-15.6C8.9,17.8,7.6,6.9,12.5,4.1l0,0C17.4,1.3,26.2,7.8,32.7,19	c3,5.2,5,10.6,5.6,15.2c0.7,4.9-0.3,8.3-2.8,9.8C34.7,44.4,33.9,44.6,33,44.6z M13.5,5.8c-3.3,1.9-2.7,11.3,3.6,22.2	c6.3,10.9,14.1,16.1,17.4,14.2c1.7-1,2.3-3.8,1.8-7.8c-0.6-4.3-2.5-9.4-5.4-14.4C24.6,9.1,16.8,3.9,13.5,5.8L13.5,5.8z">
-                                                </path>
-                                                <circle cx="24" cy="24" r="4" fill="#80deea"></circle>
-                                            </svg>
-                                            <h3 style="color: white;">React</h3>
-                                        </div>
                                     </div>
-                                    <div class="col d-flex justify-content-start">
-                                        <div class="svg-container">
-                                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 48 48">
-                                                <path fill="#388e3c"
-                                                    d="M17.204 19.122l-4.907 2.715C12.113 21.938 12 22.126 12 22.329v5.433c0 .203.113.39.297.492l4.908 2.717c.183.101.41.101.593 0l4.907-2.717C22.887 28.152 23 27.965 23 27.762v-5.433c0-.203-.113-.39-.297-.492l-4.906-2.715c-.092-.051-.195-.076-.297-.076-.103 0-.205.025-.297.076M42.451 24.013l-.818.452c-.031.017-.049.048-.049.082v.906c0 .034.019.065.049.082l.818.453c.031.017.068.017.099 0l.818-.453c.03-.017.049-.048.049-.082v-.906c0-.034-.019-.065-.05-.082l-.818-.452C42.534 24.004 42.517 24 42.5 24S42.466 24.004 42.451 24.013">
-                                                </path>
-                                                <path fill="#37474f"
-                                                    d="M35.751,13.364l-2.389-1.333c-0.075-0.042-0.167-0.041-0.241,0.003 c-0.074,0.044-0.12,0.123-0.12,0.209L33,20.295l-2.203-1.219C30.705,19.025,30.602,19,30.5,19c-0.102,0-0.205,0.025-0.297,0.076 h0.001l-4.907,2.715C25.113,21.892,25,22.08,25,22.282v5.433c0,0.203,0.113,0.39,0.297,0.492l4.908,2.717 c0.183,0.101,0.41,0.101,0.593,0l4.907-2.717C35.887,28.106,36,27.918,36,27.715V13.788C36,13.612,35.904,13.45,35.751,13.364z M32.866,26.458l-2.23,1.235c-0.083,0.046-0.186,0.046-0.269,0l-2.231-1.235C28.051,26.412,28,26.326,28,26.234v-2.47 c0-0.092,0.051-0.177,0.135-0.224l2.231-1.234h-0.001c0.042-0.023,0.088-0.034,0.135-0.034c0.047,0,0.093,0.012,0.135,0.034 l2.23,1.234C32.949,23.587,33,23.673,33,23.765v2.47C33,26.326,32.949,26.412,32.866,26.458z">
-                                                </path>
-                                                <path fill="#2e7d32"
-                                                    d="M17.204,19.122L12,27.762c0,0.203,0.113,0.39,0.297,0.492l4.908,2.717 c0.183,0.101,0.41,0.101,0.593,0L23,22.329c0-0.203-0.113-0.39-0.297-0.492l-4.906-2.715c-0.092-0.051-0.195-0.076-0.297-0.076 c-0.103,0-0.205,0.025-0.297,0.076">
-                                                </path>
-                                                <path fill="#4caf50"
-                                                    d="M17.204,19.122l-4.907,2.715C12.113,21.938,12,22.126,12,22.329l5.204,8.642 c0.183,0.101,0.41,0.101,0.593,0l4.907-2.717C22.887,28.152,23,27.965,23,27.762l-5.203-8.64c-0.092-0.051-0.195-0.076-0.297-0.076 c-0.103,0-0.205,0.025-0.297,0.076">
-                                                </path>
-                                                <path fill="#37474f"
-                                                    d="M47.703 21.791l-4.906-2.715C42.705 19.025 42.602 19 42.5 19c-.102 0-.205.025-.297.076h.001l-4.907 2.715C37.114 21.892 37 22.084 37 22.294v5.411c0 .209.114.402.297.503l4.908 2.717c.184.102.409.102.593 0l2.263-1.253c.207-.115.206-.412-.002-.526l-4.924-2.687C40.052 26.412 40 26.325 40 26.231v-2.466c0-.092.05-.177.13-.221l2.235-1.236h-.001c.042-.023.088-.034.135-.034.047 0 .093.012.135.034l2.235 1.237c.08.044.13.129.13.221v2.012c0 .086.046.166.121.209.075.042.167.042.242-.001l2.398-1.393c.148-.086.24-.245.24-.417v-1.88C48 22.085 47.886 21.892 47.703 21.791zM10.703 21.791l-4.906-2.715C5.705 19.025 5.602 19 5.5 19c-.102 0-.205.025-.297.076h.001l-4.907 2.715C.114 21.892 0 22.084 0 22.294v7.465c0 .086.046.166.121.209.075.042.167.042.242-.001l2.398-1.393C2.909 28.488 3 28.329 3 28.157v-4.393c0-.092.05-.177.13-.221l2.235-1.236H5.365c.042-.023.088-.034.135-.034.047 0 .093.012.135.034l2.235 1.237C7.95 23.588 8 23.673 8 23.765v4.393c0 .172.091.331.24.417l2.398 1.393c.075.043.167.043.242.001C10.954 29.925 11 29.845 11 29.759v-7.464C11 22.085 10.886 21.892 10.703 21.791z">
-                                                </path>
-                                            </svg>
-                                            <h3 style="color: white;">NodeJs</h3>
-                                        </div>
-                                    </div>                                          
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-8 col-md-10 col-lg-10 col-xl-10" style="display: none;"id="convertFile">
+                        <div class="col-sm-8 col-md-10 col-lg-10 col-xl-10" style="display: none; background-color: #f8f9fa; border-radius: 0 0 10px 0;" id="hseqSystem">
                             <div style="padding-top: 20px;">
                                 <div class="row" style="text-align: center;font-weight: bold;">
-                                    <h1>ConvertFile</h1>
+                                    <h1 style="color: #212529;">HSEQ System</h1>
                                 </div>
-                                <div class="row " >
-                                    <div class="col " >
-                                        <h2 style="font-weight: bold;">Convierte imagenes a .webp</h2>
-                                        <span>Optimización de imágenes con ConvertFile: Más velocidad, menos carga, formato .webp.</span>
-                                    </div>
-                                    <div class="col" >
-                                        <div style="border-style:dashed;border-radius: 10px;display: flex;justify-content: center;align-items: center;padding-top: 10px;padding-bottom: 10px;padding-left: 30px;padding-right: 30px;">
-                                            <button onclick="document.getElementById('fileInput').click()" style="border: none; background-color: #000000;color: white;font-weight: bold;font-size: x-large;border-radius: 10px;padding: 10px;height: fit-content;">Seleccionar Archivo</button>
-                                            <input id="fileInput" type="file" accept=".png,.jpg,.jpeg" onchange="mostrarNombreArchivos(this);" style="display: none;" multiple />
+                                <div class="row">
+                                    <div class="col-12" style="text-align: center; padding: 20px;">
+                                        <p style="color: #212529; font-size: 1.2rem;">Gestiona la seguridad, salud, medio ambiente y calidad de tu empresa de forma simple y efectiva</p>
+                                        <div style="margin-top: 20px;">
+                                            <span class="badge rounded-pill text-bg-secondary">Work</span>
+                                            <span class="badge rounded-pill text-bg-success">Empresas</span>
                                         </div>
-                                        <div style="overflow-y:scroll; height: 100px">
-                                            <ul id="listaArchivos"></ul>  
-                                        </div>                                                                                                                                                                                        
+                                        <button onclick="openHseqSystem()" style="margin-top: 30px; border: none; background-color: #0078d4; padding: 10px 20px; border-radius: 10px; color: white; font-weight: bold; cursor: pointer;">
+                                            Ir al sitio
+                                        </button>
                                     </div>
                                 </div>
-                                <div class="row " style="display: flex;text-align: center;">
-                                    <div class="pt-2">
-                                        <button onclick="enviarArchivosAlServidor()" style="border: none;background-color: #67696C;padding: 10px;border-radius: 10px;color: white;font-weight: bold;">Convertir imágenes</button>
-                                    </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-8 col-md-10 col-lg-10 col-xl-10" style="display: none; background-color: #f8f9fa; border-radius: 0 0 10px 0;" id="parkingSystem">
+                            <div style="padding-top: 20px;">
+                                <div class="row" style="text-align: center;font-weight: bold;">
+                                    <h1 style="color: #212529;">Parking System</h1>
                                 </div>
-                                <div class="row pt-2 stackTech">
-                                    <div style="text-align: center;">
-                                        <h2 style="color: #000000;">Tecnologías usadas</h2>
-                                    </div>                                      
-                                </div>
-                                <div class="row stackTech">
-                                    <div class="col d-flex justify-content-end ">
-                                        <div class="svg-container">
-                                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 48 48">
-                                                <path fill="#80deea"
-                                                    d="M24,34C11.1,34,1,29.6,1,24c0-5.6,10.1-10,23-10c12.9,0,23,4.4,23,10C47,29.6,36.9,34,24,34z M24,16	c-12.6,0-21,4.1-21,8c0,3.9,8.4,8,21,8s21-4.1,21-8C45,20.1,36.6,16,24,16z">
-                                                </path>
-                                                <path fill="#80deea"
-                                                    d="M15.1,44.6c-1,0-1.8-0.2-2.6-0.7C7.6,41.1,8.9,30.2,15.3,19l0,0c3-5.2,6.7-9.6,10.3-12.4c3.9-3,7.4-3.9,9.8-2.5	c2.5,1.4,3.4,4.9,2.8,9.8c-0.6,4.6-2.6,10-5.6,15.2c-3,5.2-6.7,9.6-10.3,12.4C19.7,43.5,17.2,44.6,15.1,44.6z M32.9,5.4	c-1.6,0-3.7,0.9-6,2.7c-3.4,2.7-6.9,6.9-9.8,11.9l0,0c-6.3,10.9-6.9,20.3-3.6,22.2c1.7,1,4.5,0.1,7.6-2.3c3.4-2.7,6.9-6.9,9.8-11.9	c2.9-5,4.8-10.1,5.4-14.4c0.5-4-0.1-6.8-1.8-7.8C34,5.6,33.5,5.4,32.9,5.4z">
-                                                </path>
-                                                <path fill="#80deea"
-                                                    d="M33,44.6c-5,0-12.2-6.1-17.6-15.6C8.9,17.8,7.6,6.9,12.5,4.1l0,0C17.4,1.3,26.2,7.8,32.7,19	c3,5.2,5,10.6,5.6,15.2c0.7,4.9-0.3,8.3-2.8,9.8C34.7,44.4,33.9,44.6,33,44.6z M13.5,5.8c-3.3,1.9-2.7,11.3,3.6,22.2	c6.3,10.9,14.1,16.1,17.4,14.2c1.7-1,2.3-3.8,1.8-7.8c-0.6-4.3-2.5-9.4-5.4-14.4C24.6,9.1,16.8,3.9,13.5,5.8L13.5,5.8z">
-                                                </path>
-                                                <circle cx="24" cy="24" r="4" fill="#80deea"></circle>
-                                            </svg>
-                                            <h3 style="color: #000000;">React</h3>
+                                <div class="row">
+                                    <div class="col-12" style="text-align: center; padding: 20px;">
+                                        <p style="color: #212529; font-size: 1.2rem;">Gestiona tu estacionamiento de forma simple y efectiva</p>
+                                        <div style="margin-top: 20px;">
+                                            <span class="badge rounded-pill text-bg-secondary">Work</span>
+                                            <span class="badge rounded-pill text-bg-warning">Parking Management</span>
+                                            <span class="badge rounded-pill text-bg-success">Empresas</span>
                                         </div>
+                                        <button onclick="openParkingSystem()" style="margin-top: 30px; border: none; background-color: #0078d4; padding: 10px 20px; border-radius: 10px; color: white; font-weight: bold; cursor: pointer;">
+                                            Ir al sitio
+                                        </button>
                                     </div>
-                                    <div class="col d-flex justify-content-start">
-                                        <div class="svg-container">
-                                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 48 48">
-                                                <path fill="#388e3c"
-                                                    d="M17.204 19.122l-4.907 2.715C12.113 21.938 12 22.126 12 22.329v5.433c0 .203.113.39.297.492l4.908 2.717c.183.101.41.101.593 0l4.907-2.717C22.887 28.152 23 27.965 23 27.762v-5.433c0-.203-.113-.39-.297-.492l-4.906-2.715c-.092-.051-.195-.076-.297-.076-.103 0-.205.025-.297.076M42.451 24.013l-.818.452c-.031.017-.049.048-.049.082v.906c0 .034.019.065.049.082l.818.453c.031.017.068.017.099 0l.818-.453c.03-.017.049-.048.049-.082v-.906c0-.034-.019-.065-.05-.082l-.818-.452C42.534 24.004 42.517 24 42.5 24S42.466 24.004 42.451 24.013">
-                                                </path>
-                                                <path fill="#37474f"
-                                                    d="M35.751,13.364l-2.389-1.333c-0.075-0.042-0.167-0.041-0.241,0.003 c-0.074,0.044-0.12,0.123-0.12,0.209L33,20.295l-2.203-1.219C30.705,19.025,30.602,19,30.5,19c-0.102,0-0.205,0.025-0.297,0.076 h0.001l-4.907,2.715C25.113,21.892,25,22.08,25,22.282v5.433c0,0.203,0.113,0.39,0.297,0.492l4.908,2.717 c0.183,0.101,0.41,0.101,0.593,0l4.907-2.717C35.887,28.106,36,27.918,36,27.715V13.788C36,13.612,35.904,13.45,35.751,13.364z M32.866,26.458l-2.23,1.235c-0.083,0.046-0.186,0.046-0.269,0l-2.231-1.235C28.051,26.412,28,26.326,28,26.234v-2.47 c0-0.092,0.051-0.177,0.135-0.224l2.231-1.234h-0.001c0.042-0.023,0.088-0.034,0.135-0.034c0.047,0,0.093,0.012,0.135,0.034 l2.23,1.234C32.949,23.587,33,23.673,33,23.765v2.47C33,26.326,32.949,26.412,32.866,26.458z">
-                                                </path>
-                                                <path fill="#2e7d32"
-                                                    d="M17.204,19.122L12,27.762c0,0.203,0.113,0.39,0.297,0.492l4.908,2.717 c0.183,0.101,0.41,0.101,0.593,0L23,22.329c0-0.203-0.113-0.39-0.297-0.492l-4.906-2.715c-0.092-0.051-0.195-0.076-0.297-0.076 c-0.103,0-0.205,0.025-0.297,0.076">
-                                                </path>
-                                                <path fill="#4caf50"
-                                                    d="M17.204,19.122l-4.907,2.715C12.113,21.938,12,22.126,12,22.329l5.204,8.642 c0.183,0.101,0.41,0.101,0.593,0l4.907-2.717C22.887,28.152,23,27.965,23,27.762l-5.203-8.64c-0.092-0.051-0.195-0.076-0.297-0.076 c-0.103,0-0.205,0.025-0.297,0.076">
-                                                </path>
-                                                <path fill="#37474f"
-                                                    d="M47.703 21.791l-4.906-2.715C42.705 19.025 42.602 19 42.5 19c-.102 0-.205.025-.297.076h.001l-4.907 2.715C37.114 21.892 37 22.084 37 22.294v5.411c0 .209.114.402.297.503l4.908 2.717c.184.102.409.102.593 0l2.263-1.253c.207-.115.206-.412-.002-.526l-4.924-2.687C40.052 26.412 40 26.325 40 26.231v-2.466c0-.092.05-.177.13-.221l2.235-1.236h-.001c.042-.023.088-.034.135-.034.047 0 .093.012.135.034l2.235 1.237c.08.044.13.129.13.221v2.012c0 .086.046.166.121.209.075.042.167.042.242-.001l2.398-1.393c.148-.086.24-.245.24-.417v-1.88C48 22.085 47.886 21.892 47.703 21.791zM10.703 21.791l-4.906-2.715C5.705 19.025 5.602 19 5.5 19c-.102 0-.205.025-.297.076h.001l-4.907 2.715C.114 21.892 0 22.084 0 22.294v7.465c0 .086.046.166.121.209.075.042.167.042.242-.001l2.398-1.393C2.909 28.488 3 28.329 3 28.157v-4.393c0-.092.05-.177.13-.221l2.235-1.236H5.365c.042-.023.088-.034.135-.034.047 0 .093.012.135.034l2.235 1.237C7.95 23.588 8 23.673 8 23.765v4.393c0 .172.091.331.24.417l2.398 1.393c.075.043.167.043.242.001C10.954 29.925 11 29.845 11 29.759v-7.464C11 22.085 10.886 21.892 10.703 21.791z">
-                                                </path>
-                                            </svg>
-                                            <h3 style="color: #000000;">NodeJs</h3>
-                                        </div>
-                                    </div>                                          
                                 </div>
-                            </div>                                    
+                            </div>
                         </div>
                     </div>                          
                 </div>
